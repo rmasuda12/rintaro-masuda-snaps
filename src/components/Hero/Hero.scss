@@ -1,0 +1,14 @@
+.hero {
+    padding: 1rem;
+
+    &__title {
+        padding: 1rem 0;
+        font-size: 0.8rem;
+    }
+
+    &__statement {
+        &--emphasis {
+            font-style: italic;
+        }
+    }
+}

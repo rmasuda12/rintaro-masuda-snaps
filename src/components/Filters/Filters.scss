@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.filters {
+    background: $sage;
+    padding: 1rem 0;
+
+    &__title {
+        padding: 0 1rem;
+        font-weight: 500;
+    }
+
+    &__list {
+        margin: 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+    }
+
+    &__tag {
+        margin: 0.25rem;
+        font-family: "Outfit";
+        padding: 0.375rem 0.5rem;
+        color: $forest-green;
+        background: $white;
+        border: 1px solid forestgreen;
+        border-radius: 10px;
+
+        &:hover {
+            background: $forest-green;
+            color: $white;
+        }
+        @include tablet{
+            padding: 0.5rem 0.75rem;
+        }
+    }
+}
