@@ -8,7 +8,16 @@ function GalleryItems(prop) {
         <>
         <li className="gallery__item">
             <img className="gallery__photo" src={prop.item.photo}></img>
-            <p>{prop.item.tags}</p>    
+            <div className="gallery__container">
+                <p className="gallery__photographer">{prop.item.photographer}</p>
+            </div>
+            <ul className="gallery__tag-list">
+                {prop.item.tags.map((tag, index) => {
+                    return(
+                        <li key={index} className="gallery__tag-item">{tag}</li>
+                    )
+                })}
+            </ul>  
         </li>
         </>
     )

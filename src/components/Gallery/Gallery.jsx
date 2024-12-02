@@ -15,9 +15,6 @@ function Gallery(prop) {
             return item.tags.includes(prop.selectedTag);
     })}
 
-    console.log(filteredGalleryArray)
-
-
     return (
         <>
         <main className='gallery'>

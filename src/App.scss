@@ -5,6 +5,7 @@
 * {
   margin: 0;
   color: $black;
+  box-sizing: border-box;
 }
 body {
   font-family: "NewsReader";
@@ -27,7 +28,7 @@ h2 {
   line-height: 1.4375rem;
   font-weight: 300;
   @include tablet {
-    font-size: 1.5 rem;
+    font-size: 1rem;
     line-height: 1.875rem;
   }
 }
@@ -42,22 +43,25 @@ h3 {
   }
 }
 
-p {
-  font-size: 1.125rem;
-  line-height: 1.4375rem;
-  font-weight: 500;
-  @include tablet {
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-  }
-}
-
 li {
+  font-family: "Outfit";
   font-size: 0.75rem;
   line-height: 0.9375rem;
   font-weight: 500;
   @include tablet {
     font-size: 0.875rem;
     line-height: 1.09375rem;
+  }
+}
+
+a {
+  font-size: 0.75rem;
+  line-height: 1.09375rem;
+  text-decoration: none;
+  font-family: "Outfit";
+  font-weight: 400;
+  @include tablet {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
   }
 }
