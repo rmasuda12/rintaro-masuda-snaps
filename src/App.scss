@@ -1,6 +1,67 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/mixins" as *;
+
 * {
   margin: 0;
+  color: $black;
+  box-sizing: border-box;
 }
-.header {
-  background-color: grey;
+body {
+  font-family: "NewsReader";
+  background: $pistachio;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+  @include tablet {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+h2 {
+  font-family: 'Outfit';
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+  font-weight: 300;
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.875rem;
+  }
+}
+
+h3 {
+  font-size: 1.625rem;
+  line-height: 2.375rem;
+  font-weight: 300;
+  @include tablet {
+    font-size: 3.25rem;
+    line-height: 4.125rem;
+  }
+}
+
+li {
+  font-family: "Outfit";
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  font-weight: 500;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.09375rem;
+  }
+}
+
+a {
+  font-size: 0.75rem;
+  line-height: 1.09375rem;
+  text-decoration: none;
+  font-family: "Outfit";
+  font-weight: 400;
+  @include tablet {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
 }

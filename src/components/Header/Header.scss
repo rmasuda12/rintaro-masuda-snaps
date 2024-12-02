@@ -1,0 +1,63 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+.header {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    max-width: $desktop-breakpoint;
+
+    @include tablet {
+        padding: 2rem 1.5rem;
+    }
+
+    @include desktop {
+        margin: auto;
+    }
+    &__button {
+        font-size: 0.8rem;
+        font-weight: 500;
+        background: $pistachio;
+        border: 2px solid $forest-green;
+        border-radius: 100px;
+        color: $forest-green;
+        padding: 0.5rem 1rem;
+
+        &--clicked {
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 2px solid $forest-green;
+            border-radius: 100px;
+            padding: 0.5rem 1rem;
+            background: $forest-green;
+            color: $white;
+
+            .header__button-logo {
+                fill: white;
+            }
+
+            @include tablet {
+                padding: 0.6875rem 1.375rem;  
+            }
+        }
+
+        &:hover {
+            background: $forest-green;
+            color: $white;
+        }
+
+        &:hover .header__button-logo {
+            background: $forest-green;
+            color: $white;
+            fill: $white;
+        }
+        @include tablet {
+            padding: 0.6875rem 1.375rem;  
+        }
+    }
+
+    &__button-logo {
+        fill: #1E6655;
+        padding: 0 0 0 0.5rem;
+        width: 2rem;
+    }
+}

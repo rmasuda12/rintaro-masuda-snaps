@@ -1,0 +1,31 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.hero {
+    padding: 1rem;
+    max-width: $desktop-breakpoint;
+
+    @include tablet {
+        padding: 1.5rem;
+    }
+
+    @include desktop {
+        margin: auto;
+    }
+
+    &__title {
+        padding: 1rem 0;
+        font-weight: 300;
+        font-size: 0.8rem;
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
+
+    }
+
+    &__statement {
+        &--emphasis {
+            font-style: italic;
+        }
+    }
+}
