@@ -17,6 +17,12 @@
     @include desktop {
         width: 31%;
     }
+
+    &--desktop-filter {
+        @include desktop {
+            width: 47%;
+        }
+    }
 }
 
 .gallery__photo {

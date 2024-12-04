@@ -3,7 +3,7 @@ import "./Header.scss";
 
 function Header(prop) {
     let buttonStatus = 'header__button'
-    if (prop.filterStatus === true) {
+    if (prop.isFilterOpen === true) {
         buttonStatus = 'header__button--clicked'
     }
 

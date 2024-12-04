@@ -1,5 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
 .hero {
     padding: 1rem;
     max-width: $desktop-breakpoint;

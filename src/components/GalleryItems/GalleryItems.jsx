@@ -4,9 +4,10 @@ import { useState } from "react";
 
 function GalleryItems(prop) {
 
+    let contentClass = `gallery__item ${prop.isFilterOpen === true ?"gallery__item--desktop-filter": ""}`;
     return (
         <>
-        <li className="gallery__item">
+        <li className={contentClass}>
             <img className="gallery__photo" src={prop.item.photo}></img>
             <div className="gallery__container">
                 <p className="gallery__photographer">{prop.item.photographer}</p>

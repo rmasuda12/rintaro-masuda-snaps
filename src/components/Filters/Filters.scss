@@ -4,13 +4,12 @@
 .filters {
     background: $sage;
     padding: 1rem 0;
-    max-width: $desktop-breakpoint;
     @include tablet {
         padding: 0.5rem;
     }
 
     @include desktop {
-        margin: auto;
+        width: 33%;
     }
 
     &__title {

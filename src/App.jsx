@@ -8,11 +8,11 @@ import "./styles/partials/_variables.scss"
 import { useState } from 'react';
 
 function App() {
-  const [filterStatus, setFilterStatus] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState("");
 
   function filtersClickHandler() {
-      setFilterStatus(!filterStatus);
+      setIsFilterOpen(!isFilterOpen);
   }
 
   function tagClickHandler(event) {
@@ -33,11 +33,14 @@ function App() {
 
   return (
     <>
-      <Header filtersClickHandler={filtersClickHandler} filterStatus={filterStatus}/>
-      {console.log("before ternary", filterStatus)}
-      {filterStatus ? <Filters tagClickHandler={tagClickHandler}/> : ""}
-      <Hero />
-      <Gallery selectedTag={selectedTag}/>
+      <Header filtersClickHandler={filtersClickHandler} isFilterOpen={isFilterOpen}/>
+      <section className='app'>
+        {isFilterOpen ? <Filters tagClickHandler={tagClickHandler} /> : ""}
+        <div className='app__contents'>
+        <Hero />
+        <Gallery selectedTag={selectedTag} isFilterOpen={isFilterOpen}/>
+        </div>
+      </section>
       <Footer />
     </>
   )
