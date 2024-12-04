@@ -8,11 +8,11 @@ import "./styles/partials/_variables.scss"
 import { useState } from 'react';
 
 function App() {
-  const [filterStatus, setFilterStatus] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState("");
 
   function filtersClickHandler() {
-      setFilterStatus(!filterStatus);
+      setIsFilterOpen(!isFilterOpen);
   }
 
   function tagClickHandler(event) {
@@ -33,12 +33,12 @@ function App() {
 
   return (
     <>
-      <Header filtersClickHandler={filtersClickHandler} filterStatus={filterStatus}/>
+      <Header filtersClickHandler={filtersClickHandler} isFilterOpen={isFilterOpen}/>
       <section className='app'>
-        {filterStatus ? <Filters tagClickHandler={tagClickHandler} /> : ""}
+        {isFilterOpen ? <Filters tagClickHandler={tagClickHandler} /> : ""}
         <div className='app__contents'>
         <Hero />
-        <Gallery selectedTag={selectedTag} filterStatus={filterStatus}/>
+        <Gallery selectedTag={selectedTag} isFilterOpen={isFilterOpen}/>
         </div>
       </section>
       <Footer />

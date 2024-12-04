@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function GalleryItems(prop) {
 
-    let contentClass = `gallery__item ${prop.filterStatus === true ?"gallery__item--desktop-filter": ""}`;
+    let contentClass = `gallery__item ${prop.isFilterOpen === true ?"gallery__item--desktop-filter": ""}`;
     return (
         <>
         <li className={contentClass}>
