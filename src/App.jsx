@@ -34,10 +34,13 @@ function App() {
   return (
     <>
       <Header filtersClickHandler={filtersClickHandler} filterStatus={filterStatus}/>
-      {console.log("before ternary", filterStatus)}
-      {filterStatus ? <Filters tagClickHandler={tagClickHandler}/> : ""}
-      <Hero />
-      <Gallery selectedTag={selectedTag}/>
+      <section className='app'>
+        {filterStatus ? <Filters tagClickHandler={tagClickHandler} /> : ""}
+        <div className='app__contents'>
+        <Hero />
+        <Gallery selectedTag={selectedTag} filterStatus={filterStatus}/>
+        </div>
+      </section>
       <Footer />
     </>
   )

@@ -65,3 +65,13 @@ a {
     line-height: 1.625rem;
   }
 }
+
+.app {
+  max-width: $desktop-breakpoint;
+
+  @include desktop {
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
