@@ -1,4 +1,5 @@
 import "./Header.scss";
+import { NavLink } from "react-router-dom";
 
 
 function Header(prop) {
@@ -10,7 +11,9 @@ function Header(prop) {
     return (
         <>
             <header className='header'>
-            <h1 className="header__title">Snaps</h1>
+            <NavLink to={"/"}>
+                <h1 className="header__title">Snaps</h1>
+            </NavLink>
             <button className={buttonStatus} onClick={prop.filtersClickHandler}>
                 Filters
                 <svg className="header__button-logo" width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -15,6 +15,17 @@
         }
     
     }
+    
+    &__nav-wrapper {
+        @include tablet {
+            width: 47%;
+            margin: 0.75rem;
+        }
+        
+        @include desktop {
+            width: 31%;
+        }
+    }
 
     @include desktop {
         margin: auto;

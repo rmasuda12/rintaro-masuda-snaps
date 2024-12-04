@@ -1,12 +1,11 @@
-@use "./styles/partials/variables" as *;
-@use "./styles/partials/fonts" as *;
-@use "./styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
 
 * {
   margin: 0;
   color: $black;
   box-sizing: border-box;
-  font-family: "NewsReader";
 }
 body {
   font-family: "NewsReader";

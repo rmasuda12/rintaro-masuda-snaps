@@ -1,13 +1,16 @@
 import "./GalleryItems.scss";
 import gallery from "../../assets/Data/photos.json";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function GalleryItems(prop) {
 
     let contentClass = `gallery__item ${prop.isFilterOpen === true ?"gallery__item--desktop-filter": ""}`;
     return (
         <>
+
         <li className={contentClass}>
+            <NavLink to={`/details/${prop.item.id}`}>
             <img className="gallery__photo" src={prop.item.photo}></img>
             <div className="gallery__container">
                 <p className="gallery__photographer">{prop.item.photographer}</p>
@@ -19,6 +22,7 @@ function GalleryItems(prop) {
                     )
                 })}
             </ul>  
+            </NavLink>
         </li>
         </>
     )
