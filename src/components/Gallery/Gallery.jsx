@@ -1,33 +1,49 @@
 import "./Gallery.scss";
 import GalleryItems from "../GalleryItems/GalleryItems.jsx";
-import gallery from "../../assets/Data/photos.json";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 function Gallery(prop) {
-    const [galleryArray, setGalleryArray] = useState(gallery);
+    const [galleryArray, setGalleryArray] = useState([]);
 
-    let filteredGalleryArray = [];
+    async function getGallery() {
+        const gallery = await axios.get("https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=01d304a3-a3a3-494f-9eeb-032594a3b8c2")
+        console.log(gallery.data)
+
+        setGalleryArray(gallery.data);
+    }
+
     useEffect(() => {
+        getGallery()
+    }, []);
+    
+    let filteredGalleryArray = [];
+
+    // useEffect(() => {
         if (prop.selectedTag === "") {
-            filteredGalleryArray = gallery
-            setGalleryArray(filteredGalleryArray);
+            filteredGalleryArray = galleryArray
+            // setGalleryArray(filteredGalleryArray);
         } else {
-            filteredGalleryArray = gallery.filter((item) => {
+            filteredGalleryArray = galleryArray.filter((item) => {
                 return item.tags.includes(prop.selectedTag);
             })
-            setGalleryArray(filteredGalleryArray);
+            // setGalleryArray(filteredGalleryArray);
         }
-    })
+    // })
+
+    // if (prop.selectedTag === "") {
+    //     filteredGalleryArray = galleryArray
+    // } else {
+    //     filteredGalleryArray = galleryArray.filter((item) => {
+    //         return item.tags.includes(prop.selectedTag);
+    // })}
 
     return (
         <>
         <main className='gallery'>
             <ul className='gallery__list'>
-                {galleryArray.map((item) => {
-                    return (
-                        <GalleryItems item={item} isFilterOpen={prop.isFilterOpen}/>
-                    )
+                {filteredGalleryArray.map((item) => {
+                    return <GalleryItems key={item.id} item={item} isFilterOpen={prop.isFilterOpen}/>
                 })}
             </ul>
         </main>
