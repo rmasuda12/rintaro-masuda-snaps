@@ -38,7 +38,6 @@ function HomePage(prop) {
         <Gallery selectedTag={selectedTag} isFilterOpen={prop.isFilterOpen}/>
         </div>
       </section>
-      <Footer />
     </>
   )
 }
