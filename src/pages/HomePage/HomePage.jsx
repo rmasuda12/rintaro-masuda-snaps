@@ -19,25 +19,32 @@ function HomePage(prop) {
   }, [])
   
   function tagClickHandler(event) {
-    const tagArray = document.getElementsByClassName("filters__tag")
-
     if (selectedTag === event.target.innerText) {
       setSelectedTag("");
-      event.target.classList.remove("filters__tag--clicked");
     } else {
-      for (let item of tagArray) {
-        item.classList.remove("filters__tag--clicked");
-      }
       setSelectedTag(event.target.innerText);
-      event.target.classList.add("filters__tag--clicked");
     }
+    // const tagArray = document.getElementsByClassName("filters__tag")
+
+    // if (selectedTag === event.target.innerText) {
+    //   setSelectedTag("");
+    //   event.target.classList.remove("filters__tag--clicked");
+    // } else {
+    //   for (let item of tagArray) {
+    //     item.classList.remove("filters__tag--clicked");
+    //   }
+    //   setSelectedTag(event.target.innerText);
+    //   event.target.classList.add("filters__tag--clicked");
+    // }
   }
+
+  console.log(selectedTag)
 
 
   return (
     <>
       <section className='app'>
-        {prop.isFilterOpen ? <Filters tagClickHandler={tagClickHandler} /> : ""}
+        {prop.isFilterOpen ? <Filters tagClickHandler={tagClickHandler} selectedTag={selectedTag}/> : ""}
         <div className='app__contents'>
         <Hero />
         <Gallery selectedTag={selectedTag} isFilterOpen={prop.isFilterOpen}/>

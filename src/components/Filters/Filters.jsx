@@ -17,10 +17,10 @@ function Filters(prop) {
         <section className='filters'>
         <h2 className='filters__title'>Filters</h2>
         <ul className='filters__list'>
-            {tags.map((element, index) => {
+            {tags.map((tag, index) => {
                 return (
-                    <li key={index} className="filters__tag" onClick={prop.tagClickHandler}>
-                        {element}
+                    <li key={index} className={prop.selectedTag === tag?'filters__tag  filters__tag--clicked':'filters__tag'} onClick={prop.tagClickHandler}>
+                        {tag}
                     </li>
                 )
             })

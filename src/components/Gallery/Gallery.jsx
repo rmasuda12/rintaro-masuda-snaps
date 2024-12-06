@@ -21,7 +21,7 @@ function Gallery(prop) {
 
     let filteredGalleryArray = [];
 
-    if (!prop.isFilterOpen || prop.selectedTag === "") {
+    if (prop.selectedTag === "") {
         filteredGalleryArray = galleryArray
     } else {
         filteredGalleryArray = galleryArray.filter((item) => {
