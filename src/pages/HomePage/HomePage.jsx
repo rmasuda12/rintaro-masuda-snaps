@@ -6,13 +6,18 @@ import Gallery from '../../components/Gallery/Gallery.jsx';
 import Hero from '../../components/Hero/Hero.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import "../../styles/partials/_variables.scss";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from "../../components/Header/Header.jsx"
 
 function HomePage(prop) {
   const [selectedTag, setSelectedTag] = useState("");
 
-
+  useEffect(()=> {
+    if (!prop.isFilterOpen) {
+      setSelectedTag("");
+    }
+  }, [])
+  
   function tagClickHandler(event) {
     const tagArray = document.getElementsByClassName("filters__tag")
 
