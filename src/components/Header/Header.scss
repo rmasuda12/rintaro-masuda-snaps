@@ -13,6 +13,7 @@
     @include desktop {
         margin: auto;
     }
+
     &__button {
         font-size: 0.8rem;
         font-weight: 500;
@@ -59,5 +60,22 @@
         fill: #1E6655;
         padding: 0 0 0 0.5rem;
         width: 2rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__link-logo {
+        margin: 0 0.5rem;
+    }
+
+    &__link-word {
+        color: $forest-green;
+        font-size: 1.25rem;
+
+
     }
 }

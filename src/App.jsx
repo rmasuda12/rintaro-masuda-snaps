@@ -1,47 +1,26 @@
 import './App.scss'
-import Header from './components/Header/Header.jsx';
-import Filters from './components/Filters/Filters.jsx';
-import Gallery from './components/Gallery/Gallery.jsx';
-import Hero from './components/Hero/Hero.jsx';
-import Footer from './components/Footer/Footer.jsx';
 import "./styles/partials/_variables.scss"
 import { useState } from 'react';
+import HomePage from './pages/HomePage/HomePage.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import PhotoDetails from './pages/PhotoDetails/PhotoDetails.jsx';
 
 function App() {
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [selectedTag, setSelectedTag] = useState("");
 
-  function filtersClickHandler() {
-      setIsFilterOpen(!isFilterOpen);
-  }
-
-  function tagClickHandler(event) {
-    const tagArray = document.getElementsByClassName("filters__tag")
-
-    if (selectedTag === event.target.innerText) {
-      setSelectedTag("");
-      event.target.classList.remove("filters__tag--clicked");
-    } else {
-      for (let item of tagArray) {
-        item.classList.remove("filters__tag--clicked");
-      }
-      setSelectedTag(event.target.innerText);
-      event.target.classList.add("filters__tag--clicked");
-    }
-  }
-
+  // const apiKey = "01d304a3-a3a3-494f-9eeb-032594a3b8c2"
 
   return (
     <>
-      <Header filtersClickHandler={filtersClickHandler} isFilterOpen={isFilterOpen}/>
-      <section className='app'>
-        {isFilterOpen ? <Filters tagClickHandler={tagClickHandler} /> : ""}
-        <div className='app__contents'>
-        <Hero />
-        <Gallery selectedTag={selectedTag} isFilterOpen={isFilterOpen}/>
-        </div>
-      </section>
-      <Footer />
+      <BrowserRouter> 
+        <Routes>
+          <Route path='/' element={<HomePage/>} />
+          <Route path='/details/:id' element={<PhotoDetails />}/>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+
     </>
   )
 }

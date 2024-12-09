@@ -1,0 +1,117 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.details {
+    padding: 1rem;
+    max-width: $tablet-breakpoint;
+
+    @include tablet {
+        padding: 1.5rem;
+        margin: auto
+    }
+
+}
+
+.form {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        padding: 1rem 0 0 0;
+        font-family: "Outfit";
+        font-weight: 400;
+
+    }
+
+    &__input {
+        outline: none;
+        border-radius: 8px;
+        height: 2.5rem;
+        border: 1px solid $sea-green;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        font-weight: 300;
+        &--comment {
+            height: 5rem;
+            justify-self: start;
+            padding: 0.75rem 0.75rem 2rem 0.75rem
+        }
+
+        &:focus {
+            border: 1px solid $forest-green;
+            &:invalid {
+                border: 1px solid red;
+            }
+        }
+
+    }
+
+    &__submit {
+        background: $forest-green;
+        border: 1px solid $forest-green;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        color: white;
+        font-size: 0.625rem;
+        margin: 0.5rem 0;
+        margin-left: auto;
+
+        @include tablet {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            line-height: 1.625rem;
+            border-radius: 12px;
+        }
+    }
+}
+
+.comments {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 3rem;
+
+
+    &__title {
+        padding: 0.5rem 0;
+
+        @include tablet {
+            padding: 0.75rem 0;
+        }
+    }
+
+    &__item {
+        border-top: 1px solid $sea-green;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        color: $forest-green;
+        padding: 0.5rem 0;
+
+        @include tablet {
+            padding: 0.75rem 0;
+        }
+    }
+    &__detail {
+        font-size: 0.625rem;
+        line-height: 0.75rem;
+        font-weight: 500;
+        color: $forest-green;
+
+        @include tablet {
+            font-size: 0.75rem;
+            line-height: 0.935rem;
+        }
+    }
+
+    &__comment {
+        padding-bottom: 0.5rem;
+        width: 100%;
+        @include tablet{
+            padding-bottom: 0.75rem;
+        }
+    }
+}

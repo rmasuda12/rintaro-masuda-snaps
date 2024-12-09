@@ -1,11 +1,11 @@
-@use "./styles/partials/variables" as *;
-@use "./styles/partials/fonts" as *;
-@use "./styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
 
 * {
   margin: 0;
   color: $black;
-  // box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
   font-family: "NewsReader";
@@ -13,7 +13,6 @@ body {
 }
 
 h1 {
-  font-family: "NewsReader";
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -55,7 +54,7 @@ li {
   }
 }
 
-a, p, label, input {
+a {
   font-size: 0.75rem;
   line-height: 1.09375rem;
   text-decoration: none;
@@ -66,18 +65,6 @@ a, p, label, input {
     line-height: 1.625rem;
   }
 }
-
-// p {
-//   font-size: 0.75rem;
-//   line-height: 1.09375rem;
-//   text-decoration: none;
-//   font-family: "Outfit";
-//   font-weight: 400;
-//   @include tablet {
-//     font-size: 1.25rem;
-//     line-height: 1.625rem;
-//   }
-// }
 
 .app {
   max-width: $desktop-breakpoint;

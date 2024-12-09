@@ -1,13 +1,13 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-
 .gallery__item {
     list-style: none;
     border: 1px solid $sea-green;
     background: $sage;
     border-radius: 8px;
     margin: 0.5rem 0;
+    width: 100%;
 
     @include tablet {
         width: 46.5%;
@@ -23,6 +23,24 @@
             width: 47%;
         }
     }
+
+    &--details {
+
+        @include tablet {
+            width: 100%;
+            margin: 0;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+}
+
+.gallery__link {
+    padding: 0;
+    margin: 0;
+
 }
 
 .gallery__photo {
@@ -49,12 +67,16 @@
     display: flex;
     position: relative;
     justify-content: end;
+
 }
 
 .gallery__tag-list {
     list-style: none;
     display: flex;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem;
+    @include tablet {
+        padding: 1rem 0.75rem 0.75rem 0.75rem;
+    }
 }
 
 .gallery__tag-item {
@@ -80,4 +102,45 @@
         padding: 0.5rem 0.75rem;
         border-radius: 12px;
     }
+
+    &--details {
+        @include tablet {
+            margin: 0 0.75rem;
+            padding: 0.5rem 1.25rem;
+        }
+    }
+}
+.gallery__info-container {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem 1rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+        padding: 0.75rem 1.5rem 1.5rem 1.5rem;
+
+    }
+}
+.gallery__info {
+    @include tablet {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.gallery__likes {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.5rem 0;
+}
+
+.gallery__like-count {
+    margin: 0 0.25rem;
+}
+
+.gallery__photographer-info {
+    // @include tablet {
+    //     margin: 5%;
+    // }
 }
