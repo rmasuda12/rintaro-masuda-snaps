@@ -61,4 +61,21 @@
         padding: 0 0 0 0.5rem;
         width: 2rem;
     }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__link-logo {
+        margin: 0 0.5rem;
+    }
+
+    &__link-word {
+        color: $forest-green;
+        font-size: 1.25rem;
+
+
+    }
 }

@@ -3,6 +3,7 @@
 
 .hero {
     padding: 1rem;
+    padding-bottom: 3rem;
     max-width: $desktop-breakpoint;
 
     @include tablet {

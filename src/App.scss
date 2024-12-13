@@ -55,7 +55,7 @@ li {
   }
 }
 
-a {
+a, p, label, input {
   font-size: 0.75rem;
   line-height: 1.09375rem;
   text-decoration: none;
@@ -66,6 +66,18 @@ a {
     line-height: 1.625rem;
   }
 }
+
+// p {
+//   font-size: 0.75rem;
+//   line-height: 1.09375rem;
+//   text-decoration: none;
+//   font-family: "Outfit";
+//   font-weight: 400;
+//   @include tablet {
+//     font-size: 1.25rem;
+//     line-height: 1.625rem;
+//   }
+// }
 
 .app {
   max-width: $desktop-breakpoint;
