@@ -22,7 +22,7 @@ function GalleryItems(prop) {
         <>
 
         <li className={contentClass}>
-            <NavLink to={`/details/${prop.item.id}`}>
+            <NavLink className={"gallery__link"} to={`/details/${prop.item.id}`}>
             <img className="gallery__photo" src={prop.item.photo}></img>
             {prop.isHomePage ?
             <div className="gallery__container">
