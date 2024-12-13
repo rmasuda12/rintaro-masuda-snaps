@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import GalleryItems from "../../components/GalleryItems/GalleryItems";
 
+//dotenv import
+const baseURL = import.meta.env.VITE_API_URL;
+
 function PhotoDetails() {
     const [photoItem, setPhotoItem] = useState('');
     const [comments, setComments] = useState('')
@@ -12,7 +15,7 @@ function PhotoDetails() {
 
     async function getPhoto() {
         try {
-            const photo = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${param.id}?api_key=01d304a3-a3a3-494f-9eeb-032594a3b8c2`);
+            const photo = await axios.get(`${baseURL}/photos/${param.id}`);
             
             setPhotoItem(photo.data);            
         } catch (error) {
@@ -25,7 +28,7 @@ function PhotoDetails() {
 
     async function getComments() {
         try {
-            const commentsArray = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${param.id}/comments?api_key=01d304a3-a3a3-494f-9eeb-032594a3b8c2`);
+            const commentsArray = await axios.get(`${baseURL}/photos/${param.id}/comments`);
 
             setComments(commentsArray.data.reverse())            
         } catch (error) {
@@ -43,7 +46,7 @@ function PhotoDetails() {
             name: event.target.name.value,
             comment: event.target.comment.value
         }
-        const post = await axios.post(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${param.id}/comments?api_key=01d304a3-a3a3-494f-9eeb-032594a3b8c2`, comment);
+        const post = await axios.post(`${baseURL}/photos/${param.id}/comments`, comment);
 
         event.target.reset();
 
