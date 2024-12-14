@@ -6,9 +6,8 @@ function GalleryItems(prop) {
     let contentClass;
     let tagClass; 
 
-
-    if (prop.isHomePage === true) {
-        contentClass = `gallery__item ${prop.isFilterOpen === true ?"gallery__item--desktop-filter": ""}`;
+    if (prop.isHomePage) {
+        contentClass = `gallery__item ${prop.isFilterOpen ?"gallery__item--desktop-filter": ""}`;
         tagClass = 'gallery__tag-item'
     } else {
         contentClass = 'gallery__item gallery__item--details';

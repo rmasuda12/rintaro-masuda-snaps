@@ -57,7 +57,7 @@ function PhotoDetails() {
         <Header isHomePage={false}/>
         <section className="details">
         {photoItem !== '' ? 
-        <GalleryItems item={photoItem} isHomePage={false}/>
+        <GalleryItems item={photoItem} isHomePage={false} baseURL={baseURL}/>
         : ''}
         <form className="form" onSubmit={postComment}>
             <label className="form__label" htmlFor="name" >Name</label>
