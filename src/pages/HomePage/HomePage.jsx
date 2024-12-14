@@ -12,10 +12,8 @@ function HomePage(prop) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   function filtersClickHandler() {
-    console.log("button clicked");
     setIsFilterOpen(!isFilterOpen);
   }
-  console.log(isFilterOpen);
 
   //tag status
   const [selectedTag, setSelectedTag] = useState("");

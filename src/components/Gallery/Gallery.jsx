@@ -12,8 +12,6 @@ function Gallery(prop) {
     async function getGallery() {
         try {
             const gallery = await axios.get(`${baseURL}/photos`)
-            console.log(gallery.data)
-
             //use set to rerender the page once data has been collected
             setGalleryArray(gallery.data);
         } catch (error) {

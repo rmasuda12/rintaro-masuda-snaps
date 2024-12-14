@@ -7,7 +7,6 @@ function Filters(prop) {
 
     async function getTags() {
         const tags = await axios.get("https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=01d304a3-a3a3-494f-9eeb-032594a3b8c2")
-        console.log(tags.data)
         setTags(tags.data)
     }
     useEffect(() => {getTags()}, []);

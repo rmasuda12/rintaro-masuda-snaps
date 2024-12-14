@@ -1,11 +1,14 @@
 import "./Footer.scss";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
     return (
     <>
     <footer className='footer'>
     <section className="footer__details">
+    <NavLink to={"/"}>
     <h1 className='footer__title'>Snaps</h1>
+    </NavLink>
 
     <article className="footer__links">
         <div className='footer__link-list'>
