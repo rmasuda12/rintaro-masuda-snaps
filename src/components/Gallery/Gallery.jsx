@@ -39,7 +39,7 @@ function Gallery(prop) {
         <main className='gallery'>
             <ul className='gallery__list'>
                 {filteredGalleryArray.map((item) => {
-                    return <GalleryItems key={item.id} item={item} isFilterOpen={prop.isFilterOpen} isHomePage={true}/>
+                    return <GalleryItems key={item.id} item={item} isFilterOpen={prop.isFilterOpen} isHomePage={true} baseURL={baseURL}/>
                 })}
             </ul>
         </main>
