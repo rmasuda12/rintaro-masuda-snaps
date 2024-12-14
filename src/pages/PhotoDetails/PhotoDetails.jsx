@@ -24,7 +24,6 @@ function PhotoDetails() {
 
     }
     useEffect(()=>{getPhoto()}, []);
-    console.log(photoItem)
 
     async function getComments() {
         try {
@@ -38,7 +37,6 @@ function PhotoDetails() {
     }
 
     useEffect(()=>{getComments()}, []);
-    console.log("this is comments",comments);
 
     async function postComment(event) {
         event.preventDefault();
@@ -62,14 +60,14 @@ function PhotoDetails() {
         <GalleryItems item={photoItem} isHomePage={false}/>
         : ''}
         <form className="form" onSubmit={postComment}>
-            <label className="form__label" for="name" >Name</label>
+            <label className="form__label" htmlFor="name" >Name</label>
             <input 
                 type="text" 
                 name="name" 
                 className="form__input"
                 required
             />
-            <label className="form__label" for="comment" >Comment</label>
+            <label className="form__label" htmlFor="comment" >Comment</label>
             <input 
                 type="text" 
                 name="comment" 
