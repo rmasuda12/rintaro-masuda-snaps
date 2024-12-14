@@ -12,8 +12,6 @@ function Gallery(prop) {
     async function getGallery() {
         try {
             const gallery = await axios.get(`${baseURL}/photos`)
-            console.log(gallery.data)
-
             //use set to rerender the page once data has been collected
             setGalleryArray(gallery.data);
         } catch (error) {
@@ -41,7 +39,7 @@ function Gallery(prop) {
         <main className='gallery'>
             <ul className='gallery__list'>
                 {filteredGalleryArray.map((item) => {
-                    return <GalleryItems key={item.id} item={item} isFilterOpen={prop.isFilterOpen} isHomePage={true}/>
+                    return <GalleryItems key={item.id} item={item} isFilterOpen={prop.isFilterOpen} isHomePage={true} baseURL={baseURL}/>
                 })}
             </ul>
         </main>

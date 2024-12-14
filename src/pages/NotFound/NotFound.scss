@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warning {
+    padding: 1rem;
+    padding-bottom: 5rem;
+    max-width: $desktop-breakpoint;
+    @include tablet {
+        padding: 1.5rem;
+        padding-bottom: 10rem;
+    }
+    @include desktop {
+        margin: auto;
+    }
+}

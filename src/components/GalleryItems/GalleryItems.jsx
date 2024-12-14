@@ -1,6 +1,4 @@
 import "./GalleryItems.scss";
-import gallery from "../../assets/Data/photos.json";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function GalleryItems(prop) {
@@ -8,9 +6,8 @@ function GalleryItems(prop) {
     let contentClass;
     let tagClass; 
 
-
-    if (prop.isHomePage === true) {
-        contentClass = `gallery__item ${prop.isFilterOpen === true ?"gallery__item--desktop-filter": ""}`;
+    if (prop.isHomePage) {
+        contentClass = `gallery__item ${prop.isFilterOpen ?"gallery__item--desktop-filter": ""}`;
         tagClass = 'gallery__tag-item'
     } else {
         contentClass = 'gallery__item gallery__item--details';
@@ -23,7 +20,7 @@ function GalleryItems(prop) {
 
         <li className={contentClass}>
             <NavLink className={"gallery__link"} to={`/details/${prop.item.id}`}>
-            <img className="gallery__photo" src={prop.item.photo}></img>
+            <img className="gallery__photo" src={`${prop.baseURL}/images/${prop.item.photo}`} alt={prop.item.photoDescription}></img>
             {prop.isHomePage ?
             <div className="gallery__container">
                 <p className="gallery__photographer">{prop.item.photographer}</p>

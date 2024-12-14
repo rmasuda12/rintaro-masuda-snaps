@@ -12,10 +12,8 @@ function HomePage(prop) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   function filtersClickHandler() {
-    console.log("button clicked");
     setIsFilterOpen(!isFilterOpen);
   }
-  console.log(isFilterOpen);
 
   //tag status
   const [selectedTag, setSelectedTag] = useState("");
@@ -42,7 +40,7 @@ function HomePage(prop) {
         {isFilterOpen ? <Filters tagClickHandler={tagClickHandler} selectedTag={selectedTag}/> : ""}
         <div className='app__contents'>
         <Hero />
-        <Gallery selectedTag={selectedTag} isFilterOpen={prop.isFilterOpen}/>
+        <Gallery selectedTag={selectedTag} isFilterOpen={isFilterOpen}/>
         </div>
       </section>
     </>
