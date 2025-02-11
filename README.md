@@ -1,4 +1,4 @@
-# 📅 Photo Gallery App
+# 📸 Photo Gallery App
 
 A photo sharing platform to view your community's creations. 
 
