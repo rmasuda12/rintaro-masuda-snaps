@@ -10,7 +10,6 @@ A photo sharing platform to view your community's creations.
 ### 🛠️ Tech Stack
 
 - **Front End:** React, Sass, Axios
-- **[Back End:](https://github.com/rmasuda12/snaps-server)** Node.js, Express, Knex, MySQL
 
 ## 📦 Installation & Setup
 
@@ -29,13 +28,13 @@ create .env file in the root directory
 VITE_API_URL: "http://localhost:[port number]"
 ```
 
-#### Initialize Backend
-Follow steps for installing and setting up the [Backend Repo](https://github.com/rmasuda12/snaps-server)
-
 #### Start app
 ```bash
 npm start
 ```
+
+#### Take a look at API
+[API Documentation](https://unit-3-project-c5faaab51857.herokuapp.com)
 
 ## App Pages
 
