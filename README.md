@@ -1,8 +1,58 @@
-# React + Vite
+# 📅 Photo Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A photo sharing platform to view your community's creations. 
 
-Currently, two official plugins are available:
+### 🚀 Features
+- **View Photos**: View photos shared by your community in a responsive gallery format
+- **React to Photos**: Like and leave comments underphotos
+- More features coming soon...
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🛠️ Tech Stack
+
+- **Front End:** React, Sass, Axios
+- **[Back End:](https://github.com/rmasuda12/snaps-server)** Node.js, Express, Knex, MySQL
+
+## 📦 Installation & Setup
+
+#### Clone the Repository
+```bash
+git clone https://github.com/rmasuda12/snaps.git
+cd snaps
+```
+#### Download Dependencies
+```bash
+npm install
+```
+#### Set Up Environment Variables
+create .env file in the root directory
+```env
+VITE_API_URL: "http://localhost:[port number]"
+```
+
+#### Initialize Backend
+Follow steps for installing and setting up the [Backend Repo](https://github.com/rmasuda12/snaps-server)
+
+#### Start app
+```bash
+npm start
+```
+
+## App Pages
+
+### Home Page
+![Homepage](./src/assets/screenshots/home.png)
+### Social Page
+![Create habit page](./src/assets/screenshots/photo.png)
+
+---
+
+### Future Implementations
+- login and authentication
+- post photos
+
+## License
+This project is licensed under the MIT License
+
+## Contact
+For questions, reach out via: 
+Email: masudarinta@gmail.com
